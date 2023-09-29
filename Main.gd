@@ -8,6 +8,8 @@ func game_over():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
 	$HUD.show_game_over()
+	$Music.stop()
+	$DeathSound.play()
 
 
 func new_game():
@@ -16,6 +18,7 @@ func new_game():
 	$Player.start($StartPosition.position)
 	$HUD/Message.hide()
 	$StartTimer.start()
+	$Music.play()
 
 
 func _on_mob_timer_timeout():
